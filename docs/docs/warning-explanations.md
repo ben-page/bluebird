@@ -82,4 +82,13 @@ getUser().then(function(user) {
 });
 ```
 
+Or you suppress the warning for a single runaway promise using `.suppressRunawayWarning()`:
+
+```js
+getUser().then(function(user) {
+    // Perform this in the "background" and don't care about it's result at all
+    saveAnalytics(user).suppressRunawayWarning();
+});
+```
+
 
